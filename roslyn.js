@@ -24,7 +24,6 @@ initiateGameplayVariables();
 // Levels***********************************************************************
 let level;
 function evaluateLevels() {
-  tempLevel = level // for checking if it's a new level
   if (monstersCaught < 2) { level = 1}
   if (monstersCaught > 2) { level = 2;}
   if (monstersCaught > 5) { level = 3;}
@@ -33,12 +32,6 @@ function evaluateLevels() {
 
   if(level == 2) {
     // Make the monster meander a bit
-    ctx.fillStyle = "rgb(250, 250, 250)";
-    ctx.font = "24px Helvetica";
-    ctx.textAlign = "left";
-    ctx.textBaseline = "top";
-    ctx.fillText('Level 2', 32, 32);
-    monster.direction += ( (Math.random() - 0.5) * 0.3 * Math.random());
   }
   if (level == 3) {
     // Make the monster make some eratic 90 degree turns
@@ -47,6 +40,7 @@ function evaluateLevels() {
   }
 
   if (level == 4) {
+    // Make the monster go faster when you get close
     monster.speed = monsterStartSpeed; // Reset monster speed
     let xDifference = hero.x - monster.x;
     let yDifference = hero.y - monster.y;
@@ -55,6 +49,7 @@ function evaluateLevels() {
   }
 
   if (level == 5) {
+    // Make the monster get faster and change direction when you get close
     monster.speed = monsterStartSpeed * 1.5;
     let xDifference = hero.x - monster.x;
     let yDifference = hero.y - monster.y;
