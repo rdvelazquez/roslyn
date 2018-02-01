@@ -32,11 +32,12 @@ function evaluateLevels() {
 
   if(level == 2) {
     // Make the monster meander a bit
+    monster.direction += ( (Math.random() - 0.5) * 0.4 * Math.random());
   }
   if (level == 3) {
     // Make the monster make some eratic 90 degree turns
-    if(Math.random() > 0.99) monster.direction += Math.PI * 0.5;
-    if(Math.random() > 0.99) monster.direction -= Math.PI * 0.5;
+    if(Math.random() > 0.995) monster.direction += Math.PI * 0.5;
+    if(Math.random() > 0.995) monster.direction -= Math.PI * 0.5;
   }
 
   if (level == 4) {
