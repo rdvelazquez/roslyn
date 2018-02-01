@@ -6,6 +6,5 @@ branches:
   only:
     - develop
     - master
-    - travis
 script:
   - npm test
